@@ -58,9 +58,11 @@
 		02FAA5FC28FEA57D0059F355 /* Hackaton */ = {
 			isa = PBXGroup;
 			children = (
+				02FAA61528FEAA4A0059F355 /* View */,
+				02FAA61428FEAA410059F355 /* Model */,
 				02FAA5FD28FEA57D0059F355 /* AppDelegate.swift */,
 				02FAA5FF28FEA57D0059F355 /* SceneDelegate.swift */,
-				02FAA60128FEA57D0059F355 /* ViewController.swift */,
+				02FAA61628FEAA5C0059F355 /* Controller */,
 				02FAA60328FEA57D0059F355 /* Main.storyboard */,
 				02FAA60928FEA57E0059F355 /* Assets.xcassets */,
 				02FAA60B28FEA57E0059F355 /* LaunchScreen.storyboard */,
@@ -68,6 +70,28 @@
 				02FAA60628FEA57D0059F355 /* Hackaton.xcdatamodeld */,
 			);
 			path = Hackaton;
+			sourceTree = "<group>";
+		};
+		02FAA61428FEAA410059F355 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		02FAA61528FEAA4A0059F355 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		02FAA61628FEAA5C0059F355 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				02FAA60128FEA57D0059F355 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

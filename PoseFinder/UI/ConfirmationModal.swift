@@ -7,24 +7,58 @@
 //
 
 import UIKit
+import CoreData
+
+protocol ConfirmationModalDelegate {
+    func willAppear()
+    func willDisappear()
+}
 
 class ConfirmationModal: UIViewController {
-
+    
+    @IBOutlet var nameField: UITextField!
+    @IBOutlet var poseImage: UIImageView!
+    
+    var delegate: ConfirmationModalDelegate!
+    var currentPose: [Pose]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        delegate.willAppear()
     }
-    */
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        delegate.willDisappear()
+    }
+    
+    @IBAction func cancelButtonTapped() {
+        self.dismiss(animated: true)
+    }
+    
+    @IBAction func saveButtonTapped() {
+        if nameField.text?.isEmpty == false {
+            addNewPose()
+            self.dismiss(animated: true)
+        }
+    }
+    
+    @objc func dismissKeyboard() {
+         view.endEditing(true)
+    }
 }
+
+extension ConfirmationModal {
+    func addNewPose() {
+        SavedPoses.shared.poses[nameField.text!] = currentPose
+    }
+}
+
+

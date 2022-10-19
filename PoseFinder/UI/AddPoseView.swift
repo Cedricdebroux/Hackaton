@@ -28,7 +28,7 @@ class AddPoseView: UIViewController {
     /// The set of parameters passed to the pose builder when detecting poses.
     private var poseBuilderConfiguration = PoseBuilderConfiguration()
     
-    private var currentPoses: [Joint.Name: Joint]?
+    private var currentPoses: [Pose]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +69,7 @@ class AddPoseView: UIViewController {
             super.viewWillDisappear(animated)
         }
     }
+    
 
     override func viewWillTransition(to size: CGSize,
                                      with coordinator: UIViewControllerTransitionCoordinator) {
@@ -78,7 +79,13 @@ class AddPoseView: UIViewController {
     
     
     @IBAction func savedPoseButton(_ sender: Any) {
+        let confirmationModal = storyboard?.instantiateViewController(identifier: "ConfirmationModal") as? ConfirmationModal
+        confirmationModal?.modalPresentationStyle = .automatic
         
+        confirmationModal?.delegate = self
+        confirmationModal?.currentPose = currentPoses
+    
+        present(confirmationModal!, animated: true, completion: nil)
     }
     
     @IBAction func onCameraButtonTapped(_ sender: Any) {
@@ -126,10 +133,23 @@ extension AddPoseView: PoseNetDelegate {
                                       inputImage: currentFrame)
 
         let poses = [poseBuilder.pose]
-        self.currentPoses = poses.first?.joints
-        dump(currentPoses)
+        if let personPose = poses.first,
+            personPose.joints.values.allSatisfy({ $0.isValid }) {
+            self.currentPoses = poses
+            dump(poses)
+        }
         
         previewImageView.show(poses: poses, on: currentFrame)
     }
 }
 
+extension AddPoseView : ConfirmationModalDelegate {
+    func willAppear() {
+        videoCapture.stopCapturing()
+    }
+    
+    func willDisappear() {
+        currentPoses = nil
+        videoCapture.startCapturing()
+    }
+}

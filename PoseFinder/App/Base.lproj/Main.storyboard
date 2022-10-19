@@ -215,11 +215,17 @@
                                 <rect key="frame" x="254" y="683" width="61" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped" destination="pqO-6q-gHn" eventType="touchUpInside" id="CAs-T9-ZHF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waj-0x-QFo">
                                 <rect key="frame" x="60" y="683" width="77" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped" destination="pqO-6q-gHn" eventType="touchUpInside" id="HM8-1e-NTv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3VY-ME-P8w"/>
@@ -238,6 +244,10 @@
                             <constraint firstItem="zqw-kW-ecY" firstAttribute="centerX" secondItem="sb4-Id-Gcx" secondAttribute="centerX" id="sZE-Ix-4kP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameField" destination="Jof-9J-Z1J" id="1gB-In-3dZ"/>
+                        <outlet property="poseImage" destination="zqw-kW-ecY" id="eIF-SO-ku6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uIT-V0-cpa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

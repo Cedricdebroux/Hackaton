@@ -127,6 +127,7 @@ extension AddPoseView: PoseNetDelegate {
 
         let poses = [poseBuilder.pose]
         self.currentPoses = poses.first?.joints
+        dump(currentPoses)
         
         previewImageView.show(poses: poses, on: currentFrame)
     }

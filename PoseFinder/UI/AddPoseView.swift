@@ -1,17 +1,20 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-The implementation of the application's view controller, responsible for coordinating
- the user interface, video feed, and PoseNet model.
-*/
+//
+//  AddPoseView.swift
+//  PoseFinder
+//
+//  Created by Cédric Debroux on 18/10/2022.
+//  Copyright © 2022 Apple. All rights reserved.
+//
 
 import AVFoundation
 import UIKit
 import VideoToolbox
 
-class ViewController: UIViewController {
-    /// The view the controller uses to visualize the detected poses.
+class AddPoseView: UIViewController {
+    
+    @IBOutlet var savedPose: UIImageView!
+    
+    
     @IBOutlet private var previewImageView: PoseImageView!
 
     private let videoCapture = VideoCapture()
@@ -25,6 +28,7 @@ class ViewController: UIViewController {
     /// The set of parameters passed to the pose builder when detecting poses.
     private var poseBuilderConfiguration = PoseBuilderConfiguration()
     
+    private var currentPoses: [Joint.Name: Joint]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +75,12 @@ class ViewController: UIViewController {
         // Reinitilize the camera to update its output stream with the new orientation.
         setupAndBeginCapturingVideoFrames()
     }
-
+    
+    
+    @IBAction func savedPoseButton(_ sender: Any) {
+        
+    }
+    
     @IBAction func onCameraButtonTapped(_ sender: Any) {
         videoCapture.flipCamera { error in
             if let error = error {
@@ -85,7 +94,7 @@ class ViewController: UIViewController {
 
 // MARK: - VideoCaptureDelegate
 
-extension ViewController: VideoCaptureDelegate {
+extension AddPoseView: VideoCaptureDelegate {
     func videoCapture(_ videoCapture: VideoCapture, didCaptureFrame capturedImage: CGImage?) {
         guard currentFrame == nil else {
             return
@@ -101,7 +110,7 @@ extension ViewController: VideoCaptureDelegate {
 
 // MARK: - PoseNetDelegate
 
-extension ViewController: PoseNetDelegate {
+extension AddPoseView: PoseNetDelegate {
     func poseNet(_ poseNet: PoseNet, didPredict predictions: PoseNetOutput) {
         defer {
             // Release `currentFrame` when exiting this method.
@@ -117,7 +126,9 @@ extension ViewController: PoseNetDelegate {
                                       inputImage: currentFrame)
 
         let poses = [poseBuilder.pose]
-
+        self.currentPoses = poses.first?.joints
+        
         previewImageView.show(poses: poses, on: currentFrame)
     }
 }
+

@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02FAA61C28FEF4E00059F355 /* AddPoseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FAA61B28FEF4E00059F355 /* AddPoseView.swift */; };
+		02FAA62028FFD9CC0059F355 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02FAA61E28FFD9CC0059F355 /* CustomTableViewCell.xib */; };
+		02FAA62128FFD9CC0059F355 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FAA61F28FFD9CC0059F355 /* CustomTableViewCell.swift */; };
+		02FAA62328FFD9FA0059F355 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FAA62228FFD9FA0059F355 /* TableViewController.swift */; };
+		02FAA62528FFDA5A0059F355 /* Ghost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FAA62428FFDA5A0059F355 /* Ghost.swift */; };
+		02FAA62728FFDF170059F355 /* ConfirmationModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FAA62628FFDF170059F355 /* ConfirmationModal.swift */; };
 		0D4BB83F249769C800076D64 /* PoseNetMobileNet075S16FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BB83E249769C800076D64 /* PoseNetMobileNet075S16FP16.mlmodel */; };
 		0DCEF2C7241666CA00ECEC99 /* PoseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCEF2C6241666CA00ECEC99 /* PoseBuilder.swift */; };
 		0DCEF2C92416701D00ECEC99 /* PoseBuilder+Single.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCEF2C82416701D00ECEC99 /* PoseBuilder+Single.swift */; };
 		0DCEF2CE241676C000ECEC99 /* PoseBuilderConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCEF2CD241676C000ECEC99 /* PoseBuilderConfiguration.swift */; };
 		4A0FC5BC23190AD6004886B9 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0FC5BB23190AD6004886B9 /* CGPoint+Extension.swift */; };
-		4A2D05D023BF9BBF00D002ED /* PopOverModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2D05CF23BF9BBF00D002ED /* PopOverModalViewController.swift */; };
 		4A2D23B222BB70E400494C55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2D23B122BB70E400494C55 /* AppDelegate.swift */; };
 		4A2D23B622BB70E400494C55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2D23B522BB70E400494C55 /* ViewController.swift */; };
 		4A2D23B922BB70E400494C55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A2D23B722BB70E400494C55 /* Main.storyboard */; };
@@ -31,6 +36,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02FAA61A28FEE54C0059F355 /* PoseFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PoseFinder.xcdatamodel; sourceTree = "<group>"; };
+		02FAA61B28FEF4E00059F355 /* AddPoseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPoseView.swift; sourceTree = "<group>"; };
+		02FAA61E28FFD9CC0059F355 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		02FAA61F28FFD9CC0059F355 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		02FAA62228FFD9FA0059F355 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		02FAA62428FFDA5A0059F355 /* Ghost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ghost.swift; sourceTree = "<group>"; };
+		02FAA62628FFDF170059F355 /* ConfirmationModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationModal.swift; sourceTree = "<group>"; };
 		0563E980FDE557646F54ED8A /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		0D4BB83E249769C800076D64 /* PoseNetMobileNet075S16FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PoseNetMobileNet075S16FP16.mlmodel; sourceTree = "<group>"; };
 		0DCEF2C6241666CA00ECEC99 /* PoseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseBuilder.swift; sourceTree = "<group>"; };
@@ -38,7 +50,6 @@
 		0DCEF2CD241676C000ECEC99 /* PoseBuilderConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseBuilderConfiguration.swift; sourceTree = "<group>"; };
 		420B7A9F4BA833CE510130DA /* ACKNOWLEDGMENTS.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = ACKNOWLEDGMENTS.txt; sourceTree = "<group>"; };
 		4A0FC5BB23190AD6004886B9 /* CGPoint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extension.swift"; sourceTree = "<group>"; };
-		4A2D05CF23BF9BBF00D002ED /* PopOverModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverModalViewController.swift; sourceTree = "<group>"; };
 		4A2D23AE22BB70E400494C55 /* PoseFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoseFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A2D23B122BB70E400494C55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A2D23B522BB70E400494C55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02FAA61D28FFD9AB0059F355 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				02FAA61F28FFD9CC0059F355 /* CustomTableViewCell.swift */,
+				02FAA61E28FFD9CC0059F355 /* CustomTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0D8A71B927BDB43FD8F91908 /* LICENSE */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +123,7 @@
 		4A2D23A522BB70E400494C55 = {
 			isa = PBXGroup;
 			children = (
+				02FAA61928FEE54C0059F355 /* PoseFinder.xcdatamodeld */,
 				57C02DF057C02B4000000001 /* README.md */,
 				4A2D23B022BB70E400494C55 /* PoseFinder */,
 				4A2D23AF22BB70E400494C55 /* Products */,
@@ -122,6 +143,7 @@
 		4A2D23B022BB70E400494C55 /* PoseFinder */ = {
 			isa = PBXGroup;
 			children = (
+				02FAA61D28FFD9AB0059F355 /* View */,
 				0DCEF2CC241675C200ECEC99 /* Pose */,
 				6594E51B23454C4100D3C44D /* Model */,
 				4AFBF15322CC9A1900A4B11A /* Extensions+Types */,
@@ -166,9 +188,11 @@
 			isa = PBXGroup;
 			children = (
 				4A2D23B522BB70E400494C55 /* ViewController.swift */,
+				02FAA62228FFD9FA0059F355 /* TableViewController.swift */,
 				4AE8C3CA23ACDF1C005F9953 /* PoseImageView.swift */,
 				4A6C8A8123E84D1D0080886A /* GradientOverlayView.swift */,
-				4A2D05CF23BF9BBF00D002ED /* PopOverModalViewController.swift */,
+				02FAA61B28FEF4E00059F355 /* AddPoseView.swift */,
+				02FAA62628FFDF170059F355 /* ConfirmationModal.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -176,6 +200,7 @@
 		6594E51B23454C4100D3C44D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				02FAA62428FFDA5A0059F355 /* Ghost.swift */,
 				0D4BB83E249769C800076D64 /* PoseNetMobileNet075S16FP16.mlmodel */,
 				4AE8C3D023AD2D3B005F9953 /* PoseNetInput.swift */,
 				4AE8C3D223AD2D8A005F9953 /* PoseNetOutput.swift */,
@@ -244,6 +269,7 @@
 			files = (
 				4A2D23BE22BB70E500494C55 /* LaunchScreen.storyboard in Resources */,
 				4A2D23BB22BB70E500494C55 /* Assets.xcassets in Resources */,
+				02FAA62028FFD9CC0059F355 /* CustomTableViewCell.xib in Resources */,
 				4A2D23B922BB70E400494C55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,12 +281,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A2D05D023BF9BBF00D002ED /* PopOverModalViewController.swift in Sources */,
 				0DCEF2C92416701D00ECEC99 /* PoseBuilder+Single.swift in Sources */,
 				0DCEF2C7241666CA00ECEC99 /* PoseBuilder.swift in Sources */,
 				4A6C8A8223E84D1D0080886A /* GradientOverlayView.swift in Sources */,
+				02FAA62328FFD9FA0059F355 /* TableViewController.swift in Sources */,
 				4AA5C4B822BB9CC200277977 /* VideoCapture.swift in Sources */,
 				4AE8C3CF23AD2A74005F9953 /* CGImage+Extension.swift in Sources */,
+				02FAA62728FFDF170059F355 /* ConfirmationModal.swift in Sources */,
+				02FAA62128FFD9CC0059F355 /* CustomTableViewCell.swift in Sources */,
 				4A0FC5BC23190AD6004886B9 /* CGPoint+Extension.swift in Sources */,
 				4A97FA952350ABDE00255C7F /* Pose.swift in Sources */,
 				4A2D23B622BB70E400494C55 /* ViewController.swift in Sources */,
@@ -269,7 +297,9 @@
 				4AE8C3D323AD2D8A005F9953 /* PoseNetOutput.swift in Sources */,
 				0DCEF2CE241676C000ECEC99 /* PoseBuilderConfiguration.swift in Sources */,
 				4ADD52F822BBCF580008FAAC /* Joint.swift in Sources */,
+				02FAA61C28FEF4E00059F355 /* AddPoseView.swift in Sources */,
 				4ADE4C8C2346C07300FFD895 /* AVCaptureVideoOrientation+Extension.swift in Sources */,
+				02FAA62528FFDA5A0059F355 /* Ghost.swift in Sources */,
 				4AE8C3CB23ACDF1C005F9953 /* PoseImageView.swift in Sources */,
 				0D4BB83F249769C800076D64 /* PoseNetMobileNet075S16FP16.mlmodel in Sources */,
 				4A2D23B222BB70E400494C55 /* AppDelegate.swift in Sources */,
@@ -424,6 +454,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UQND3C5G35;
 				INFOPLIST_FILE = PoseFinder/App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,6 +475,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UQND3C5G35;
 				INFOPLIST_FILE = PoseFinder/App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -478,6 +510,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		02FAA61928FEE54C0059F355 /* PoseFinder.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				02FAA61A28FEE54C0059F355 /* PoseFinder.xcdatamodel */,
+			);
+			currentVersion = 02FAA61A28FEE54C0059F355 /* PoseFinder.xcdatamodel */;
+			path = PoseFinder.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4A2D23A622BB70E400494C55 /* Project object */;
 }

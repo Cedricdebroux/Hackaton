@@ -13,7 +13,7 @@ class CustomTableViewCell: UITableViewCell {
     
     static let identifier = "CustomTableViewCell"
 
-    @IBOutlet var ghostImageView: UIImageView!
+    @IBOutlet var ghostImageView: PoseImageView!
     @IBOutlet var nameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +28,9 @@ class CustomTableViewCell: UITableViewCell {
     
     func setupCell(model: Ghost){
         nameLabel.text = model.name
-        ghostImageView.image = model.image
+//        ghostImageView.image = model.image
+        let scale = model.size.width / 480
+        ghostImageView.show(poses: model.poses, scale: CGFloat(scale))
         
         //TODO
     }

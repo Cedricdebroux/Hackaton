@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+
+struct Ghost {
+    let name: String
+    let poses: [Pose]
+    let size: CGSize
+}

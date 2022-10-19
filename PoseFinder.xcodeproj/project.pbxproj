@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		025C66F228FFFBCC006A8FA6 /* SavedPoses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C66F128FFFBCC006A8FA6 /* SavedPoses.swift */; };
+		025C66F4290017AE006A8FA6 /* Ghost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C66F3290017AE006A8FA6 /* Ghost.swift */; };
 		02FAA61C28FEF4E00059F355 /* AddPoseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FAA61B28FEF4E00059F355 /* AddPoseView.swift */; };
 		02FAA62028FFD9CC0059F355 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02FAA61E28FFD9CC0059F355 /* CustomTableViewCell.xib */; };
 		02FAA62128FFD9CC0059F355 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FAA61F28FFD9CC0059F355 /* CustomTableViewCell.swift */; };
 		02FAA62328FFD9FA0059F355 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FAA62228FFD9FA0059F355 /* TableViewController.swift */; };
-		02FAA62528FFDA5A0059F355 /* Ghost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FAA62428FFDA5A0059F355 /* Ghost.swift */; };
 		02FAA62728FFDF170059F355 /* ConfirmationModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FAA62628FFDF170059F355 /* ConfirmationModal.swift */; };
 		02FAA62928FFE2700059F355 /* File.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 02FAA62828FFE2700059F355 /* File.rtf */; };
 		0D4BB83F249769C800076D64 /* PoseNetMobileNet075S16FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BB83E249769C800076D64 /* PoseNetMobileNet075S16FP16.mlmodel */; };
@@ -39,11 +39,11 @@
 
 /* Begin PBXFileReference section */
 		025C66F128FFFBCC006A8FA6 /* SavedPoses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPoses.swift; sourceTree = "<group>"; };
+		025C66F3290017AE006A8FA6 /* Ghost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ghost.swift; sourceTree = "<group>"; };
 		02FAA61B28FEF4E00059F355 /* AddPoseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPoseView.swift; sourceTree = "<group>"; };
 		02FAA61E28FFD9CC0059F355 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		02FAA61F28FFD9CC0059F355 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		02FAA62228FFD9FA0059F355 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		02FAA62428FFDA5A0059F355 /* Ghost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ghost.swift; sourceTree = "<group>"; };
 		02FAA62628FFDF170059F355 /* ConfirmationModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationModal.swift; sourceTree = "<group>"; };
 		02FAA62828FFE2700059F355 /* File.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = File.rtf; sourceTree = "<group>"; };
 		0563E980FDE557646F54ED8A /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
@@ -203,12 +203,12 @@
 		6594E51B23454C4100D3C44D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				02FAA62428FFDA5A0059F355 /* Ghost.swift */,
 				0D4BB83E249769C800076D64 /* PoseNetMobileNet075S16FP16.mlmodel */,
 				4AE8C3D023AD2D3B005F9953 /* PoseNetInput.swift */,
 				4AE8C3D223AD2D8A005F9953 /* PoseNetOutput.swift */,
 				4AA5C4B922BBBC2A00277977 /* PoseNet.swift */,
 				025C66F128FFFBCC006A8FA6 /* SavedPoses.swift */,
+				025C66F3290017AE006A8FA6 /* Ghost.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -300,12 +300,12 @@
 				4A2D23B622BB70E400494C55 /* ViewController.swift in Sources */,
 				4AE8C3D123AD2D3B005F9953 /* PoseNetInput.swift in Sources */,
 				4AA5C4BA22BBBC2A00277977 /* PoseNet.swift in Sources */,
+				025C66F4290017AE006A8FA6 /* Ghost.swift in Sources */,
 				4AE8C3D323AD2D8A005F9953 /* PoseNetOutput.swift in Sources */,
 				0DCEF2CE241676C000ECEC99 /* PoseBuilderConfiguration.swift in Sources */,
 				4ADD52F822BBCF580008FAAC /* Joint.swift in Sources */,
 				02FAA61C28FEF4E00059F355 /* AddPoseView.swift in Sources */,
 				4ADE4C8C2346C07300FFD895 /* AVCaptureVideoOrientation+Extension.swift in Sources */,
-				02FAA62528FFDA5A0059F355 /* Ghost.swift in Sources */,
 				4AE8C3CB23ACDF1C005F9953 /* PoseImageView.swift in Sources */,
 				0D4BB83F249769C800076D64 /* PoseNetMobileNet075S16FP16.mlmodel in Sources */,
 				4A2D23B222BB70E400494C55 /* AppDelegate.swift in Sources */,

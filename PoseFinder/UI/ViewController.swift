@@ -13,6 +13,7 @@ import VideoToolbox
 class ViewController: UIViewController {
     /// The view the controller uses to visualize the detected poses.
     @IBOutlet private var previewImageView: PoseImageView!
+    @IBOutlet private var ghostImageView : PoseImageView!
 
     private let videoCapture = VideoCapture()
 
@@ -28,6 +29,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // For convenience, the idle timer is disabled to prevent the screen from locking.
         UIApplication.shared.isIdleTimerDisabled = true
@@ -40,6 +42,15 @@ class ViewController: UIViewController {
 
         poseNet.delegate = self
         setupAndBeginCapturingVideoFrames()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        
+        if let ghost = SavedPoses.shared.selected {
+            let scale = ghost.size.width / 480
+            ghostImageView.show(poses: ghost.poses, scale: CGFloat(scale))
+        }
     }
 
     private func setupAndBeginCapturingVideoFrames() {

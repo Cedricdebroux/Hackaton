@@ -51,8 +51,14 @@ class PoseImageView: UIImageView {
     /// - parameters:
     ///     - poses: An array of detected poses.
     ///     - frame: The image used to detect the poses and used as the background for the returned image.
-    func show(poses: [Pose], on frame: CGImage) {
-        let dstImageSize = CGSize(width: frame.width, height: frame.height)
+    func show(poses: [Pose], on frame: CGImage? = nil, scale: CGFloat = 1) {
+        var dstImageSize: CGSize
+        if let realFrame = frame {
+            dstImageSize = CGSize(width: realFrame.width, height: realFrame.height)
+        }
+        else {
+            dstImageSize = CGSize(width: Int(480*scale), height: Int(640*scale))
+        }
         let dstImageFormat = UIGraphicsImageRendererFormat()
 
         dstImageFormat.scale = 1
@@ -61,8 +67,10 @@ class PoseImageView: UIImageView {
 
         let dstImage = renderer.image { rendererContext in
             // Draw the current frame as the background for the new image.
-            draw(image: frame, in: rendererContext.cgContext)
-
+            if let frameIsShowed = frame {
+                draw(image: frameIsShowed, in: rendererContext.cgContext)
+            }
+        
             for pose in poses {
                 // Draw the segment lines.
                 for segment in PoseImageView.jointSegments {
@@ -72,7 +80,7 @@ class PoseImageView: UIImageView {
                     guard jointA.isValid, jointB.isValid else {
                         continue
                     }
-
+//                    print("Draw lines from \(jointA.position) to \(jointB.position)")
                     drawLine(from: jointA,
                              to: jointB,
                              in: rendererContext.cgContext)

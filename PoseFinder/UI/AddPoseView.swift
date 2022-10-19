@@ -10,7 +10,13 @@ import AVFoundation
 import UIKit
 import VideoToolbox
 
+protocol AddPoseViewDelegate {
+    func dataChange()
+}
+
 class AddPoseView: UIViewController {
+    
+    var delegate: AddPoseViewDelegate!
     
     @IBOutlet var savedPose: UIImageView!
     
@@ -29,6 +35,7 @@ class AddPoseView: UIViewController {
     private var poseBuilderConfiguration = PoseBuilderConfiguration()
     
     private var currentPoses: [Pose]?
+    private var currentPosesFrame: CGImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,6 +91,7 @@ class AddPoseView: UIViewController {
         
         confirmationModal?.delegate = self
         confirmationModal?.currentPose = currentPoses
+        confirmationModal?.currentPosesSize = currentPosesFrame?.size
     
         present(confirmationModal!, animated: true, completion: nil)
     }
@@ -136,7 +144,9 @@ extension AddPoseView: PoseNetDelegate {
         if let personPose = poses.first,
             personPose.joints.values.allSatisfy({ $0.isValid }) {
             self.currentPoses = poses
-            dump(poses)
+            self.currentPosesFrame = currentFrame
+            
+             //dump(poses)
         }
         
         previewImageView.show(poses: poses, on: currentFrame)
@@ -151,5 +161,8 @@ extension AddPoseView : ConfirmationModalDelegate {
     func willDisappear() {
         currentPoses = nil
         videoCapture.startCapturing()
+    }
+    func SavedData() {
+        delegate.dataChange()
     }
 }

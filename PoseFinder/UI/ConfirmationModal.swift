@@ -12,21 +12,31 @@ import CoreData
 protocol ConfirmationModalDelegate {
     func willAppear()
     func willDisappear()
+    func SavedData()
 }
 
 class ConfirmationModal: UIViewController {
     
     @IBOutlet var nameField: UITextField!
-    @IBOutlet var poseImage: UIImageView!
+    @IBOutlet var poseImage: PoseImageView!
     
     var delegate: ConfirmationModalDelegate!
     var currentPose: [Pose]!
+    var currentPosesSize: CGSize!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         
+        
         view.addGestureRecognizer(tap)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let scale = currentPosesSize.width / 480
+        poseImage.show(poses: currentPose, scale: CGFloat(scale))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,7 +67,8 @@ class ConfirmationModal: UIViewController {
 
 extension ConfirmationModal {
     func addNewPose() {
-        SavedPoses.shared.poses[nameField.text!] = currentPose
+        SavedPoses.shared.poses.append(Ghost(name: nameField.text!, poses: currentPose, size: currentPosesSize))
+        delegate.SavedData()
     }
 }
 

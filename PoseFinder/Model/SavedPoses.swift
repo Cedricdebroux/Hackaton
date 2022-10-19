@@ -12,6 +12,6 @@ import Foundation
 class SavedPoses {
     static let shared = SavedPoses()
     
-    var poses = [String: [Pose]]()
-    var selected: String?
+    var poses = [Ghost]()
+    var selected: Ghost? = nil
 }

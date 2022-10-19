@@ -10,12 +10,12 @@ import UIKit
 
 class TableViewController: UIViewController {
     
-    var ghostList: [Ghost] = []
-    var poses = SavedPoses.shared.poses
+    var poses: [Ghost] {SavedPoses.shared.poses}
     
     @IBOutlet var myTabView: UITableView!
     @IBAction func addNewGhost(_ sender: Any) {
         if let addVC =  storyboard?.instantiateViewController(withIdentifier: "AddPoseView")as? AddPoseView{
+            addVC.delegate = self
             navigationController?.pushViewController(addVC, animated: true)
  
         }
@@ -33,7 +33,7 @@ class TableViewController: UIViewController {
 
 extension TableViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        ghostList.count
+        poses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,8 +41,8 @@ extension TableViewController: UITableViewDataSource{
         else{
             fatalError()
         }
-        
-        cell.setupCell(model: ghostList[indexPath.row])
+       
+        cell.setupCell(model: poses[indexPath.row])
         
         return cell
     }
@@ -50,7 +50,12 @@ extension TableViewController: UITableViewDataSource{
 
 extension TableViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let list = Array(poses.keys)
-        SavedPoses.shared.selected = list[indexPath.row]
+       
+        SavedPoses.shared.selected = poses[indexPath.row]
+    }
+}
+extension TableViewController: AddPoseViewDelegate {
+    func dataChange() {
+        myTabView.reloadData()
     }
 }
